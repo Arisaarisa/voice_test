@@ -29,12 +29,12 @@ def find_all_answers():
     return answers
 
 
-def add_answer(this_year, season, after_today):
+def add_answer(this_year, season, after_today, prefecture, region):
     conn = sqlite3.connect("crm.sqlite")
     cursor = conn.cursor()
 
-    sql = "INSERT INTO answers(thisyear,season,tomorrow) VALUES(?,?,?)"
-    cursor.execute(sql, (this_year, season, after_today))
+    sql = "INSERT INTO answers(thisyear,season,tomorrow,prefecture,region) VALUES(?,?,?,?,?)"
+    cursor.execute(sql, (this_year, season, after_today, prefecture, region))
 
     conn.commit()
     conn.close()

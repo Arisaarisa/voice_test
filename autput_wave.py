@@ -4,7 +4,7 @@ import wave
 import datetime
 
 CHUNK = 1024
-filename=f"{datetime.date.today()}.wav"
+filename = f"{datetime.date.today()}.wav"
 
 wf = wave.open(filename, 'rb')
 

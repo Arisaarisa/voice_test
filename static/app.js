@@ -42,6 +42,10 @@ speech.addEventListener( 'result' , function( e ) {
 
     if( text === "明日は" ) recognitionC.start();
 
+    if( text === "都道府県は" ) recognitionD.start();
+
+    if( text === "地方" ) recognitionE.start();
+
 
 } );
 
@@ -60,6 +64,20 @@ var recognitionB = new webkitSpeechRecognition();
 
 var recognitionC = new webkitSpeechRecognition();
   recognitionC.onresult = function(event) {
+  if (event.results.length > 0) {
+    c.value = event.results[0][0].transcript;
+  }
+}
+
+var recognitionD = new webkitSpeechRecognition();
+  recognitionD.onresult = function(event) {
+  if (event.results.length > 0) {
+    c.value = event.results[0][0].transcript;
+  }
+}
+
+var recognitionE = new webkitSpeechRecognition();
+  recognitionE.onresult = function(event) {
   if (event.results.length > 0) {
     c.value = event.results[0][0].transcript;
   }

@@ -1,9 +1,9 @@
 
 from email import message
-from email import Encoders
-
-import mine as mine
-from email.MIMEBase import MIMEBase
+# from email import Encoders
+#
+# import mine as mine
+# from email.MIMEBase import MIMEBase
 
 
 import smtplib
@@ -32,14 +32,14 @@ msg['Bcc'] = to_email
 
 
 # 添付ファイルのMIMEタイプを指定する
-attachment = MIMEBase(mine['type'], mine['subtype'])
-
-file = open(f"{datetime.date.today()}.wav")
-attachment.set_payload(file.read())
-file.close()
-Encoders.encode_base64(attachment)
-msg.attach(attachment)
-attachment.add_header("Content-Dispositon", "attachment", filename=f"{datetime.date.today()}.wav")
+# attachment = MIMEBase(mine['type'], mine['subtype'])
+#
+# file = open(f"{datetime.date.today()}.wav")
+# attachment.set_payload(file.read())
+# file.close()
+# Encoders.encode_base64(attachment)
+# msg.attach(attachment)
+# attachment.add_header("Content-Dispositon", "attachment", filename=f"{datetime.date.today()}.wav")
 
 server = smtplib.SMTP(smtp_host,smtp_prot)
 server.ehlo()

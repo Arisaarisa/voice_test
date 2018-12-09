@@ -19,8 +19,10 @@ def add_answer():
     this_year = request.form["this_year"]
     season = request.form["season"]
     after_today = request.form["after_today"]
+    prefecture = request.form["prefecture"]
+    region = request.form["region"]
 
-    db.add_answer(this_year, season, after_today)
+    db.add_answer(this_year, season, after_today, prefecture, region)
 
     return redirect(url_for("voice"))
 
