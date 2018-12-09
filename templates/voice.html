@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<h1>質問します！</h1>
+<button id="btn">音声認識開始</button>
+<div id="content"></div>
+<form action="{{url_for('add_answer')}}" method="post">
+    今年は？<input type="textarea" id="a" name="this_year" size=60>
+    <input type="button" value="年" onclick="recognitionA.start()"><br>
+    今の季節は？<input type="textarea" id="b" name="season" size=60>
+    <input type="button" value="季節" onclick="recognitionB.start()"><br>
+    明日は？<input type="textarea" id="c" name="after_today" size=60>
+    <input type="button" value="明日" onclick="recognitionC.start()"><br>
+    ここは何県ですか?<input type="textarea" id="d" name="prefecture" size=60>
+    <input type="button" value="県" onclick="recognitionD.start()"><br>
+    ここは何地方ですか?<input type="textarea" id="e" name="region" size=60>
+    <input type="button" value="地方" onclick="recognitionE.start()"><br>
+    <input type="submit" value="登録">
+    <input type="reset" value="リセット">
+</form>
+<audio id="dog" preload="auto">
+    <source src="{{ url_for('static', filename='decision3.mp3')}}" type="audio/mp3">
+</audio>
+<script src="{{ url_for('static', filename='recognition.js')}}"></script>
+<script src="{{ url_for('static', filename='app.js')}}"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
