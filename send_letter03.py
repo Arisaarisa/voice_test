@@ -1,7 +1,7 @@
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-# from email.header import Header
+from email.header import Header
 
 sender = 'voice_checkup.com'
 receivers = ['voice_checkup.com']  # 接收邮件，可设置为你的QQ邮箱或者其他邮箱
